@@ -25,11 +25,11 @@ class MyArray {
     delete(index){
         // O(n) operation
         const item = this.data[index];
-        this.shiftItems(index);
+        this._shiftItems(index);
         return item;
     }
 
-    shiftItems(index){
+    _shiftItems(index){
         for(let i = index; i < this.length - 1; i++){
             this.data[i] = this.data[i + 1];
         }
