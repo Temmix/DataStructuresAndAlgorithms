@@ -113,8 +113,8 @@ linkedList.insert(20, 35);
 linkedList.remove(1);
 linkedList.remove(0);
 console.log('All values ' + linkedList.print());
-//console.log(linkedList)
+console.log(linkedList)
 
 linkedList.reverse();
-//console.log('All values reversed ' + linkedList.print());
-//console.log(linkedList)
+console.log('All values reversed ' + linkedList.print());
+console.log(linkedList)

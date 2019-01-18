@@ -101,8 +101,8 @@ var doubleLinkedList = new DoublyLinkedList(10);
 doubleLinkedList.append(5);
 doubleLinkedList.prepend(1);
 doubleLinkedList.insert(0, 30);
-//console.log(doubleLinkedList.head);
-//console.log(doubleLinkedList.tail);
+console.log(doubleLinkedList.head);
+console.log(doubleLinkedList.tail);
 console.log(doubleLinkedList);
 console.log(doubleLinkedList.print());
 
