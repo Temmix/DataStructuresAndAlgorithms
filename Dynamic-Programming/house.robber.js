@@ -22,3 +22,13 @@ Output: 12
 Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (money = 1).
              Total amount you can rob = 2 + 9 + 1 = 12.
 */
+
+function MaxRobbing(v){
+    let even = 0;
+    let odd = 0;
+    v.forEach((x,i) => i % 2 === 0 ? (odd += x) : (even += x));
+    return even > odd ? even : odd;
+}
+
+console.log(MaxRobbing([1,2,3,1]));
+console.log(MaxRobbing([2,7,9,3,1]));
