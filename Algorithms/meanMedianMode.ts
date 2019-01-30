@@ -9,11 +9,11 @@ function meanMedianMode(array) {
 const getMean = array =>  array.reduce((x,y) => x + y)/ array.length; 
  
  
-const getMedian = array => {
-   array.sort((a, b) => a-b);
-   return (array.length % 2 !== 0) 
-    ?  array[Math.floor(array.length / 2)];
-    :  ((array[(array.length / 2) - 1] + array[array.length / 2] ) / 2); 
+const getMedian = arr => {
+   arr.sort((a, b) => a-b);
+   return (arr.length % 2 !== 0) 
+    ?  arr[Math.floor(arr.length / 2)]
+    :  ((arr[(arr.length / 2) - 1] + arr[arr.length / 2] ) / 2); 
 }
  
 const getMode = array => {
