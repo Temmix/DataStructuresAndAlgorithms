@@ -4,8 +4,7 @@ function harmlessRansomNote(noteText, magazineText) {
   var magazineObj = {};
   
   magazineArr.forEach(word => {
-    if (!magazineObj[word]) magazineObj[word] = 0;
-    magazineObj[word]++;
+    magazineObj[word] = (magazineObj[word] || 0 ) + 1
   });
   
   var noteIsPossible = true;
