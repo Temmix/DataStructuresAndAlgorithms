@@ -1,16 +1,26 @@
-//0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233...
+//0,1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233...
 let calculations = 0;
 function fibonacci(n) { //O(2^n) 
-  if (n < 2) {
+  if (n < 3) {
     return n
   }
   return fibonacci(n-1) + fibonacci(n-2);
 }
 
+// Best concept with dynamic programming
+function fibonacciMemoized(n , cache){
+  cache = cache || {};
+  if(n in cache) return cache[n];
+  if(n < 3) return n;
+  else {
+    cache[n] = fibonacciMemoized(n - 1, cache) + fibonacciMemoized(n - 2, cache);
+    return cache[n];
+  }
+}
+
 function fibonacciMaster() { //O(n)
   let cache = {};
-  return function fib(n) {
-    calculations++;
+  return function fib(n) { 
     if (n in cache) {
       return cache[n];
     } else {
