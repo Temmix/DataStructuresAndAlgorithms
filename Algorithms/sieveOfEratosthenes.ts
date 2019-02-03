@@ -3,8 +3,8 @@ function sieveOfEratosthenes(n) {
   primes[0] = false;
   primes[1] = false;
   
-  for (var i = 2; i <= Math.sqrt(n); i++) {
-    for (j = 2; i * j <= n; j++) {
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    for (let j = 2; i * j <= n; j++) {
       primes[i * j] = false;
     }
   }
