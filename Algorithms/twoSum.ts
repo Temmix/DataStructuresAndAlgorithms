@@ -1,7 +1,6 @@
 // Result should be arrays in an array
 
 // O(n) Runtime .
-
 const twoSum = (arr, num) => { 
   const map = [];
   const list = [];
