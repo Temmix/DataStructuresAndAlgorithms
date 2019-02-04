@@ -10,4 +10,4 @@ function isPalindrome(string) {
   return lettersArr.join('') === lettersArr.reverse().join('');
 }
  
-isPalindrome("Madam, I'm Adam");
+console.log(isPalindrome("Madam, I'm Adam"));

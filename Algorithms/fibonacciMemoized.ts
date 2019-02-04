@@ -12,8 +12,6 @@ function fibMemo(index, cache) {
   }
   return cache[index];
 }
- 
-console.log(fibMemo(50,[]));
 
 // using object as cache
 function fibMemo2(index, cache) { 
@@ -26,4 +24,5 @@ function fibMemo2(index, cache) {
   }
 }
 
+console.log(fibMemo(50,[]));
 console.log(fibMemo2(50,{}));
