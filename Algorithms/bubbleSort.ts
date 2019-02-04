@@ -1,3 +1,9 @@
+/*
+      Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly 
+      steps through the list, compares adjacent pairs and swaps them if they are in the wrong order. 
+      The pass through the list is repeated until the list is sorted. 
+*/
+
 function bubbleSort(list){ 
    for(let i = 0; i < list.length; i++){ 
       for(let j = i + 1; j < list.length; j++){ 
