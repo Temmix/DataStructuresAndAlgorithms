@@ -23,4 +23,4 @@ function binarySearch(numArray, key) {
     else return false;
 }
  
-binarySearch([5, 7, 12, 16, 36, 39, 42, 56, 71], 56);
+console.log(binarySearch([5, 7, 12, 16, 36, 39, 42, 56, 71], 56));

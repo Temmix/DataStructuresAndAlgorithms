@@ -1,11 +1,19 @@
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.previous = null;
+        this.next = null;
+    }
+}
+
 class DoublyLinkedList {
-    constructor(value){
+    constructor(value) {
         this.head = new Node(value);
         this.tail = this.head;
         this.length = 1;
     }
 
-    append(value){
+    append(value) {
         let newNode = new Node(value);
         newNode.previous = this.tail;
         this.tail.next = newNode;
@@ -14,32 +22,32 @@ class DoublyLinkedList {
         return this;
     }
 
-    prepend(value){ 
+    prepend(value) {
         let newNode = new Node(value);
         let current = this.head;
         newNode.next = current;
         current.previous = newNode;
-        this.head = newNode; 
+        this.head = newNode;
         this.length++;
         return this;
     }
 
-    print(){
+    print() {
         let currentNode = this.head;
         const arr = [];
-        while(currentNode !== null){ 
+        while (currentNode !== null) {
             arr.push(currentNode.value);
             currentNode = currentNode.next;
         }
         return arr;
     }
 
-    insert(index, value){
-        if(index >= this.length) 
+    insert(index, value) {
+        if (index >= this.length)
             return this.append(value);
 
         let newNode = new Node(value);
-        if(index === 0){
+        if (index === 0) {
             let currentHead = this.head;
             currentHead.previous = newNode;
             newNode.next = currentHead;
@@ -47,7 +55,7 @@ class DoublyLinkedList {
             this.length++;
             return this;
         }
-        
+
         let leader = this.traverseIndex(index - 1);
         let follower = leader.next;
         newNode.next = follower;
@@ -55,33 +63,35 @@ class DoublyLinkedList {
         follower.previous = newNode;
         leader.next = newNode;
         this.length++;
-        return this; 
+        return this;
     }
 
-    remove(index){
-        if(index >= this.length) return;  
-        if(index === 0) {
+    remove(index) {
+        if (index >= this.length) return;
+        if (index === 0) {
             let currentHead = this.head;
             this.head = currentHead.next;
             this.head.previous = null;
-            this.length--; 
-            if(this.length === 0)
-              this.tail = this.head;
+            this.length--;
+            if (this.length === 0)
+                this.tail = this.head;
             return this;
         }
 
-        let leader = this.traverseIndex(index - 1); 
-        let follower = leader.next; 
-        leader.next = follower.next;
+        let leader = this.traverseIndex(index - 1);
+        let target = leader.next;
+        let follower = target.next;
+        leader.next = follower;
+        follower.previous = leader;
         this.length--;
-        return this; 
+        return this;
     }
 
-    traverseIndex(index){
+    traverseIndex(index) {
         // do check for the validity of index
         let counter = 0;
         let currentNode = this.head;
-        while(counter !== index){ 
+        while (counter !== index) {
             currentNode = currentNode.next;
             counter++;
         }
@@ -89,23 +99,16 @@ class DoublyLinkedList {
     }
 }
 
-class Node {
-    constructor(value){
-        this.value = value;
-        this.previous = null;
-        this.next = null;
-    }
-}
 
 var doubleLinkedList = new DoublyLinkedList(10);
 doubleLinkedList.append(5);
 doubleLinkedList.prepend(1);
 doubleLinkedList.insert(0, 30);
-console.log(doubleLinkedList.head);
+console.log(doubleLinkedList.head.next.value);
 console.log(doubleLinkedList.tail);
 console.log(doubleLinkedList);
 console.log(doubleLinkedList.print());
 
-doubleLinkedList.remove(1)
+doubleLinkedList.remove(2)
 console.log(doubleLinkedList);
 console.log(doubleLinkedList.print());
