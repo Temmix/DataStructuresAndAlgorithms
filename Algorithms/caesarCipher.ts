@@ -7,7 +7,7 @@
 */
 
 function caesarCipher(str, num) {
-  num = num % 26; // this is really powerful
+  num = num % 26; // This ensures num is not greater than 26 which the count of all letters a - z
   let lowerCaseString = str.toLowerCase();
   let alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
   let newString = "";
@@ -16,15 +16,16 @@ function caesarCipher(str, num) {
     var currentLetter = lowerCaseString[i];
     if (currentLetter == " ") {
       newString += currentLetter;
-      console.log(newString);
       continue;
     }
 
     let currentIndex = alphabet.indexOf(currentLetter);
     let newIndex = currentIndex + num;
+
     if (newIndex > 25) newIndex = newIndex - 26;
     if (newIndex < 0) newIndex = 26 + newIndex;
-    // check if the original letter is uppercase
+
+    // Check if the original letter is uppercase
     newString +=
       str[i] === str[i].toUpperCase()
         ? alphabet[newIndex].toUpperCase()
@@ -33,4 +34,4 @@ function caesarCipher(str, num) {
   return newString;
 }
 
-console.log(caesarCipher("Zoo Keeper", 2));
+console.log(caesarCipher("Zoo    Keeper", 2));
