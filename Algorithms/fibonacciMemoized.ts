@@ -19,15 +19,15 @@ function fibMemo(index, cache) {
 }
 
 // using object as cache
-function fibMemo2(index, cache) { 
+function fibMemo2(index, cache) {
   cache = cache || {};
-  if(index in cache) return cache[index];
-  if(index < 3) return 1;
+  if (index in cache) return cache[index];
+  if (index < 3) return 1;
   else {
     cache[index] = fibMemo2(index - 1, cache) + fibMemo2(index - 2, cache);
     return cache[index];
   }
 }
 
-console.log(fibMemo(50,[]));
-console.log(fibMemo2(50,{}));
+console.log(fibMemo(50, []));
+console.log(fibMemo2(50, {}));
