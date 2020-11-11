@@ -12,6 +12,7 @@ If u can get a number by multiplying 2 numbers, then that number is not a prime
 */
 
 function sieveOfEratosthenes(n) {
+  if (n < 3) return [false, false];
   const primes = new Array(n).fill(true);
   primes[0] = false;
   primes[1] = false;

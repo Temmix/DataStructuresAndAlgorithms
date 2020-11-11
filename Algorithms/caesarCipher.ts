@@ -14,7 +14,7 @@ function caesarCipher(str, num) {
 
   for (var i = 0; i < lowerCaseString.length; i++) {
     var currentLetter = lowerCaseString[i];
-    if (currentLetter == " ") {
+    if (currentLetter === " ") {
       newString += currentLetter;
       continue;
     }

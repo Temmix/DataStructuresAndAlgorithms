@@ -29,6 +29,7 @@ class MyArray {
     return item;
   }
 
+  // internal method/funx (starts with _)
   _shiftItems(index) {
     for (let i = index; i < this.length - 1; i++) {
       this.data[i] = this.data[i + 1];
