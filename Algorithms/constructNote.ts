@@ -42,4 +42,4 @@ function constructNote(N,M){
  // constructNote('aa', 'abc') // false
 //constructNote('abc', 'dcba') // true
 //constructNote('aabbcc', 'bcabcaddff') // true
-constructNote('skbjjjvnnd', 'fdjlkjfeburevjvnfnsjckjncjdnchbechbadhsd')
+constructNote('skbjjjvnnd', 'fdjlkjfeburevjvnfnsjckjncjdnchbechbadhsd') //true
