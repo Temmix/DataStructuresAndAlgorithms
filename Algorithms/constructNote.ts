@@ -34,7 +34,7 @@ function constructNote(N,M){
   } 
 
   for(let i = 0; i < N.length; i++){
-    if( dM[M[i]] !== dN[N[i]]) return false
+     if( dM[N[i]] < dN[N[i]]) return false
   }
   return true
 }
