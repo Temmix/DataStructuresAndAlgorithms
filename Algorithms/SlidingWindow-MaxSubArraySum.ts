@@ -31,3 +31,21 @@ function maxSubarraySum(arr, num){
 }
 
 maxSubarraySum([2,6,9,2,1,8,5,6,3],3)
+
+
+function maxSubarraySum2(A, t){
+  if(!A.length || A.length < t) 
+      return null;
+      
+  let M = 0;
+  for(let i = 0; i < t; i++){
+      M += A[i]
+  }
+  
+  let T = M
+  for (let i = t; i < A.length; i++){
+      T = T + A[i] - A[i - t]
+      M = Math.max(M, T)
+  }
+  return M;
+}
